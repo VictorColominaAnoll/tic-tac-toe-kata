@@ -1,6 +1,5 @@
 package victor.colomina.anoll.tictactoekata;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +17,7 @@ public class GameHasNineFieldsInA3x3Grid {
     @Test
     void whenCreateNewGame_thenCheckThatIs3x3() {
         assertEquals(game.getBoardWidth(), 3);
-        assertEquals(game.getBoardHeigth(), 3);
+        assertEquals(game.getBoardHeight(), 3);
     }
 
     @Test
@@ -37,7 +36,7 @@ public class GameHasNineFieldsInA3x3Grid {
     }
 
     @Test
-    void whenFieldIsNotEmpty_returnTrue() {
+    void whenFieldIsEmpty_returnTrue() {
         assertTrue(game.isFieldEmpty(new Coordinate(2),new Coordinate(2)));
     }
 

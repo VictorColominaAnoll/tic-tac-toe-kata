@@ -12,7 +12,7 @@ public class Game {
         return 3;
     }
 
-    public int getBoardHeigth() {
+    public int getBoardHeight() {
         return 3;
     }
 
@@ -29,11 +29,19 @@ public class Game {
     }
 
     public boolean isFieldEmpty(Coordinate x, Coordinate y) {
-        return true;
+        return grid[x.getValue()][y.getValue()] == null || grid[x.getValue()][y.getValue()].getContent() == null;
+    }
+
+    public void addField(int x, int y, String playerLogo) {
+        addField(new Coordinate(x), new Coordinate(y), playerLogo);
     }
 
     public void addField(Coordinate x, Coordinate y, String playerLogo) {
+        if (!isFieldEmpty(x, y))
+            throw new FieldAlreadyTaken("Field in position (" + x + ", " + y + ") is already taken");
+
         grid[x.getValue()][y.getValue()] = new FieldOnBoard(playerLogo);
+
     }
 
     public boolean hasGameEnded() {
@@ -107,7 +115,7 @@ public class Game {
         String firstField = this.getField(new Coordinate(firstFieldXCoordinate), new Coordinate(firstFieldYCoordinate));
         String secondField = this.getField(new Coordinate(secondFieldXCoordinate), new Coordinate(secondFieldYCoordinate));
 
-        if(firstField == null || secondField == null)
+        if (firstField == null || secondField == null)
             return false;
 
         return firstField.equalsIgnoreCase(secondField);
