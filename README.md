@@ -1,4 +1,4 @@
-# tic-tac-toe-kata
+# Tic Tac Toe Kata
 
 Source: https://kata-log.rocks/tic-tac-toe-kata
 
