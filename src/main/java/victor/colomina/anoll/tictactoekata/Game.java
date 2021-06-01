@@ -70,7 +70,6 @@ public class Game {
         return playerHasRightDiagonalCompleted();
     }
 
-
     private boolean playerHasLeftDiagonalCompleted() {
         return isFirstFieldEqualToSecondField(0, 0, 1, 1)
                 && isFirstFieldEqualToSecondField(1, 1, 2, 2);
